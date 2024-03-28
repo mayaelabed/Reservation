@@ -16,14 +16,15 @@ const UserSchema = new mongoose.Schema(
             required: "Your password is required",
             select: true,
             max: 25,
-        }
-      /*  role: {
+        },
+      role: {
             type: String,
-            default: "0x01",
+            enum: ['admin', 'client'],
         },
     },
-    { timestamps: true }*/
-});
+    
+    { timestamps: true }
+);
 
 UserSchema.pre("save", function (next) {
     const user = this;

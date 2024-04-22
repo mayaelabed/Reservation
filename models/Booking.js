@@ -7,6 +7,9 @@ const bookingSchema = new mongoose.Schema({
   start_time: { type: Date, required: true },
   end_time: { type: Date, required: true },
   is_active: { type: Boolean, required: true, default: true },
+  canceled : { type:Boolean,required:true,default:false},
 });
 
-module.exports = mongoose.model('Booking', bookingSchema);
+
+const Booking = mongoose.model('Booking', bookingSchema);
+module.exports = Booking;

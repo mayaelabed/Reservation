@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const authRoutes = require('./routes/authRoutes');
 const protectedRoute = require('./routes/protectedRoute');
+const roomRoute = require('./routes/room');
+const MeetingRoom = require('./models/MeetingRoom'); // Adjust the path as per your file structure
+
 
 app.use(express.json());
 const mongoose = require('mongoose')
@@ -21,6 +24,8 @@ mongoose.connect(MONGODB_URI).then(()=> {
 
 app.use('/auth', authRoutes);
 app.use('/protected', protectedRoute);
+app.use('/room',roomRoute)
+
 
 //Get all meeting rooms
 app.get('/meeting-rooms', async (req, res) => {

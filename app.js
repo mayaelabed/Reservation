@@ -4,6 +4,8 @@ const authRoutes = require('./routes/authRoutes');
 const protectedRoute = require('./routes/protectedRoute');
 const roomRoute = require('./routes/room');
 const MeetingRoom = require('./models/MeetingRoom'); // Adjust the path as per your file structure
+const meetingRoomsRouter = require ('./routes/meetingRomsRoutes');
+const bookingRouter = require('./routes/bookingRouter');
 
 
 app.use(express.json());
@@ -24,7 +26,10 @@ mongoose.connect(MONGODB_URI).then(()=> {
 
 app.use('/auth', authRoutes);
 app.use('/protected', protectedRoute);
-app.use('/room',roomRoute)
+app.use('/room',roomRoute);
+app.use('/meetingRoomsRouter',meetingRoomsRouter);
+app.use('/bookingRouter',bookingRouter);
+
 
 
 //Get all meeting rooms

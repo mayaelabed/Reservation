@@ -14,7 +14,7 @@ router.get('/meeting-rooms', async (req, res) => {
   }
 });
 
-app.get('/meeting-rooms/available', async (req, res) => {
+/*app.get('/meeting-rooms/available', async (req, res) => {
   const { capacity, equipments, startTime, endTime } = req.query; // Get query parameters for filtering
 
   const filters = {};
@@ -39,5 +39,5 @@ app.get('/meeting-rooms/available', async (req, res) => {
     console.error(err);
     res.status(500).json({ message: 'Internal server error' });
   }
-});
+});*/
 module.exports = router;
